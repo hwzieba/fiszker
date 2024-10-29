@@ -1,5 +1,100 @@
-apple; jabłko
-banana; banan
-cat; kot
-dog; pies
-house; dom
+Engine; Silnik
+Transmission; Skrzynia biegów
+Clutch; Sprzęgło
+Brakes; Hamulce
+Suspension; Zawieszenie
+Steering wheel; Kierownica
+Battery; Akumulator
+Alternator; Alternator
+Radiator; Chłodnica
+Exhaust system; Układ wydechowy
+Air filter; Filtr powietrza
+Oil filter; Filtr oleju
+Spark plug; Świeca zapłonowa
+Headlights; Reflektory
+Brake pads; Klocki hamulcowe
+Disc brakes; Hamulce tarczowe
+Timing belt; Pasek rozrządu
+Fuel pump; Pompa paliwowa
+Fuel filter; Filtr paliwa
+Oil change; Wymiana oleju
+Coolant refill; Uzupełnienie płynu chłodniczego
+Diagnostic check; Test diagnostyczny
+Wheel alignment; Wyrównanie kół
+Tyre pressure; Ciśnienie w oponach
+Inspect the suspension; Sprawdź zawieszenie
+Test the brakes; Sprawdź hamulce
+Battery charge; Naładowanie akumulatora
+Inspect the wiring; Skontroluj okablowanie
+Replace the air filter; Wymień filtr powietrza
+Check the oil level; Sprawdź poziom oleju
+Tighten the bolts; Dokręć śruby
+Replace brake fluid; Wymień płyn hamulcowy
+Test drive; Jazda próbna
+Examine for leaks; Sprawdź wycieki
+Service interval; Interwał serwisowy
+Replace spark plugs; Wymień świece zapłonowe
+Engine diagnostic; Diagnostyka silnika
+Check engine light; Kontrolka silnika
+Oil filter replacement; Wymiana filtra oleju
+Transmission fluid check; Sprawdzenie płynu w skrzyni biegów
+Engine overheating; Przegrzanie silnika
+Steering alignment; Wyrównanie kierownicy
+Tyre rotation; Rotacja opon
+Inspect tyre tread; Skontroluj bieżnik opon
+Air conditioning check; Sprawdzenie klimatyzacji
+Inspect fuel lines; Skontroluj przewody paliwowe
+Replace timing belt; Wymień pasek rozrządu
+Clean fuel injectors; Wyczyść wtryskiwacze paliwa
+Brake adjustment; Regulacja hamulców
+Check coolant level; Sprawdź poziom płynu chłodniczego
+Fuel economy; Ekonomia paliwa
+Exhaust leak; Wyciek w układzie wydechowym
+Replace worn-out parts; Wymień zużyte części
+Inspect fan belt; Skontroluj pasek wentylatora
+Check tyre wear; Sprawdź zużycie opon
+Inspect hoses; Skontroluj węże
+Change cabin filter; Wymień filtr kabinowy
+Replace wipers; Wymień wycieraczki
+Battery replacement; Wymiana akumulatora
+Coolant flush; Wymiana płynu chłodniczego
+Inspect exhaust system; Skontroluj układ wydechowy
+Rotate the tyres; Obróć opony
+Inspect wheel bearings; Skontroluj łożyska kół
+Replace drive belt; Wymień pasek napędowy
+Check brake lines; Sprawdź przewody hamulcowe
+Replace serpentine belt; Wymień pasek klinowy
+Inspect spark plug wires; Skontroluj przewody świec zapłonowych
+Adjust tyre pressure; Wyreguluj ciśnienie w oponach
+Change transmission fluid; Wymień płyn w skrzyni biegów
+Recharge air conditioning; Napełnij klimatyzację
+Fix engine misfire; Napraw nieprawidłowe działanie silnika
+Inspect timing chain; Skontroluj łańcuch rozrządu
+Bleed the brakes; Odpowietrz hamulce
+Lubricate hinges; Nasmaruj zawiasy
+Check headlight alignment; Skontroluj ustawienie reflektorów
+Inspect shock absorbers; Skontroluj amortyzatory
+Replace wheel bearings; Wymień łożyska kół
+Check alternator output; Sprawdź wydajność alternatora
+Measure engine compression; Zmierz kompresję silnika
+Engine tuning; Strojenie silnika
+Inspect air intake; Skontroluj układ dolotowy
+Replace brake rotors; Wymień tarcze hamulcowe
+Torque the bolts; Dokręć śruby momentem
+Check idle speed; Skontroluj prędkość biegu jałowego
+Inspect catalytic converter; Skontroluj katalizator
+Replace power steering fluid; Wymień płyn wspomagania kierownicy
+Adjust headlights; Wyreguluj reflektory
+Replace battery terminals; Wymień końcówki akumulatora
+Check emissions; Skontroluj emisję spalin
+Inspect brake calipers; Skontroluj zaciski hamulcowe
+Replace differential fluid; Wymień olej w mechanizmie różnicowym
+Inspect vacuum lines; Skontroluj przewody podciśnienia
+Replace valve cover gasket; Wymień uszczelkę pokrywy zaworów
+Inspect fuse box; Skontroluj skrzynkę bezpieczników
+Perform road test; Przeprowadź jazdę próbną
+Clean battery terminals; Wyczyść końcówki akumulatora
+Inspect timing gears; Skontroluj koła rozrządu
+Install new battery; Zamontuj nowy akumulator
+Check for unusual noises; Sprawdź nietypowe dźwięki
+Replace thermostat; Wymień termostat
