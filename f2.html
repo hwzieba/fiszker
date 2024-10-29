@@ -100,6 +100,7 @@
       </div>
       <button onclick="exitMode()">Wyjdź</button>
       <div class="buttons">
+        <button onclick="speakWord()">Odtwórz wymowę</button>
         <button onclick="prevFlashcard()">Poprzednia fiszka</button>
         <button onclick="nextFlashcard()">Następna fiszka</button>
       </div>
@@ -138,7 +139,15 @@
       <input type="checkbox" id="modeMultipleChoice"> Wielokrotny wybór<br>
       <input type="checkbox" id="modeTrueFalse"> Prawda/Fałsz<br>
       <input type="checkbox" id="modeTyping"> Wpisywanie<br><br>
-      <button onclick="startTest()">Rozpocznij Test</button>
+      <button onclick="initializeTest()">Rozpocznij Test</button>
+    </div>
+
+    <div id="testQuestions" class="hidden">
+      <div id="testQuestion" class="question">Pytanie testowe</div>
+      <div id="testChoices"></div>
+      <input type="text" id="testAnswerInput" placeholder="Wpisz odpowiedź">
+      <button onclick="checkTestAnswer()">Następne pytanie</button>
+      <button onclick="exitTest()">Zakończ test</button>
     </div>
   </div>
 
@@ -151,7 +160,6 @@
     let testQuestions = [];
     let testAnswers = [];
 
-    // Funkcja do załadowania fiszek z pliku fiszki.txt
     async function loadFlashcards() {
       const response = await fetch('fiszki.txt');
       const text = await response.text();
@@ -174,27 +182,34 @@
       }
     }
 
-    // Tryb Fiszki
     function showFlashcard() {
       const card = flashcards[currentIndex];
       document.getElementById("flashcardFront").textContent = card.english;
       document.getElementById("flashcardBack").textContent = card.polish;
     }
+
     function flipFlashcard() {
       document.getElementById("flashcardBox").classList.toggle("flip");
     }
+
+    function speakWord() {
+      const text = flashcards[currentIndex].english;
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
+    }
+
     function nextFlashcard() {
       currentIndex = (currentIndex + 1) % flashcards.length;
       showFlashcard();
       document.getElementById("flashcardBox").classList.remove("flip");
     }
+
     function prevFlashcard() {
       currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
       showFlashcard();
       document.getElementById("flashcardBox").classList.remove("flip");
     }
 
-    // Wyjście z trybu z podsumowaniem
     function exitMode() {
       const modeDivs = document.querySelectorAll(".flashcard, .multiple-choice, .true-false, .typing");
       modeDivs.forEach(div => div.classList.add("hidden"));
@@ -203,15 +218,37 @@
       alert(`Wynik: ${score}/${totalQuestions} (${percent.toFixed(2)}%)`);
     }
 
-    // Funkcja do uruchomienia Testu
-    function startTest() {
-      // Implementacja testu dla wybranego trybu...
-      // Placeholder
-      alert("Test mode jest w trakcie wdrażania!");
+    function initializeTest() {
+      const questionCount = parseInt(document.getElementById("questionCount").value);
+      const modes = [];
+      if (document.getElementById("modeMultipleChoice").checked) modes.push("multipleChoice");
+      if (document.getElementById("modeTrueFalse").checked) modes.push("trueFalse");
+      if (document.getElementById("modeTyping").checked) modes.push("typing");
+      
+      testQuestions = generateTestQuestions(questionCount, modes);
+      startTest();
     }
 
-    // Ładowanie fiszek na starcie
-    loadFlashcards();
+    function startTest() {
+      document.getElementById("testMode").classList.add("hidden");
+      document.getElementById("testQuestions").classList.remove("hidden");
+      showTestQuestion();
+    }
+
+    function showTestQuestion() {
+      // Implementacja wyświetlania pytania testowego
+    }
+
+    function checkTestAnswer() {
+      // Implementacja sprawdzania odpowiedzi testowej
+    }
+
+    function exitTest() {
+      document.getElementById("testQuestions").classList.add("hidden");
+      document.getElementById("menu").classList.remove("hidden");
+      const percent = testAnswers.filter(ans => ans.correct).length / testAnswers.length * 100;
+      alert(`Test zakończony. Wynik: ${percent.toFixed(2)}%`);
+    }
   </script>
 </body>
 </html>
