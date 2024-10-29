@@ -1,0 +1,5 @@
+apple; jabłko
+banana; banan
+cat; kot
+dog; pies
+house; dom
