@@ -5,160 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fiszker</title>
   <style>
-    /* Styl główny */
     body {
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      max-width: 100vw;
-      overflow-x: hidden;
     }
-    .container {
-      width: 100%;
-      max-width: 400px;
-      padding: 10px;
-    }
-    .hidden {
+    .menu, .flashcard, .choice-mode, .true-false-mode, .input-mode, .test-mode, .summary {
       display: none;
     }
-    .question {
-      font-size: 1.2em;
-      margin: 20px 0;
+    .flashcard, .question, .buttons, .summary {
+      margin: 20px;
       text-align: center;
     }
     button {
-      padding: 10px 20px;
-      font-size: 16px;
       margin: 5px;
-    }
-
-    /* Styl dla menu */
-    .menu, .flashcard, .multiple-choice, .true-false, .typing, .test-mode {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    /* Styl fiszki */
-    .flashcard-box {
-      width: 100%;
-      max-width: 300px;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fdfdfd;
-      border: 2px solid #333;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-    }
-    .flashcard-box.flip {
-      transform: rotateY(180deg);
-    }
-    .flashcard-content {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      backface-visibility: hidden;
-    }
-    .flashcard-front {
-      background-color: #f0f8ff;
-    }
-    .flashcard-back {
-      background-color: #e6f7ff;
-      transform: rotateY(180deg);
+      padding: 10px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Fiszker</h1>
+  <h1>Aplikacja Fiszki</h1>
+  <!-- Menu Główne -->
+  <div id="menu" class="menu">
+    <button onclick="startMode('flashcard')">Fiszki</button>
+    <button onclick="startMode('choice')">Wielokrotny wybór</button>
+    <button onclick="startMode('truefalse')">Prawda/Fałsz</button>
+    <button onclick="startMode('input')">Wpisywanie</button>
+    <button onclick="startMode('test')">Test</button>
+  </div>
 
-    <!-- Menu wyboru trybu -->
-    <div id="menu" class="menu">
-      <button onclick="startMode('flashcard')">Fiszki</button>
-      <button onclick="startMode('multipleChoice')">Wielokrotny wybór</button>
-      <button onclick="startMode('trueFalse')">Prawda/Fałsz</button>
-      <button onclick="startMode('typing')">Wpisywanie</button>
-      <button onclick="startMode('testMode')">Test</button>
-    </div>
+  <!-- Tryb Fiszki -->
+  <div id="flashcard-mode" class="flashcard">
+    <div id="flashcard" class="flashcard-content">Kliknij, aby zobaczyć tłumaczenie</div>
+    <button onclick="nextFlashcard()">Następna fiszka</button>
+    <button onclick="prevFlashcard()">Poprzednia fiszka</button>
+    <button onclick="exitMode()">Wyjdź</button>
+  </div>
 
-    <!-- Tryb Fiszki -->
-    <div id="flashcard" class="flashcard hidden">
-      <div id="flashcardBox" class="flashcard-box" onclick="flipFlashcard()">
-        <div id="flashcardFront" class="flashcard-content flashcard-front"></div>
-        <div id="flashcardBack" class="flashcard-content flashcard-back"></div>
-      </div>
-      <button onclick="exitMode()">Wyjdź</button>
-      <div class="buttons">
-        <button onclick="speakWord()">Odtwórz wymowę</button>
-        <button onclick="prevFlashcard()">Poprzednia fiszka</button>
-        <button onclick="nextFlashcard()">Następna fiszka</button>
-      </div>
-    </div>
+  <!-- Tryb Wielokrotnego Wyboru -->
+  <div id="choice-mode" class="choice-mode">
+    <div id="question-choice" class="question">Pytanie wielokrotnego wyboru</div>
+    <div id="answers-choice" class="buttons"></div>
+    <button onclick="exitMode()">Wyjdź</button>
+  </div>
 
-    <!-- Tryb Wielokrotny wybór -->
-    <div id="multipleChoice" class="multiple-choice hidden">
-      <div id="mcQuestion" class="question">Pytanie</div>
-      <div class="choices" id="mcChoices"></div>
-      <button onclick="exitMode()">Wyjdź</button>
-    </div>
+  <!-- Tryb Prawda/Fałsz -->
+  <div id="true-false-mode" class="true-false-mode">
+    <div id="question-true-false" class="question">Pytanie prawda/fałsz</div>
+    <button onclick="answerTrueFalse(true)">Prawda</button>
+    <button onclick="answerTrueFalse(false)">Fałsz</button>
+    <button onclick="exitMode()">Wyjdź</button>
+  </div>
 
-    <!-- Tryb Prawda/Fałsz -->
-    <div id="trueFalse" class="true-false hidden">
-      <div id="tfQuestion" class="question">Pytanie</div>
-      <div class="buttons">
-        <button onclick="checkTrueFalse(true)">Prawda</button>
-        <button onclick="checkTrueFalse(false)">Fałsz</button>
-      </div>
-      <button onclick="exitMode()">Wyjdź</button>
-    </div>
+  <!-- Tryb Wpisywania -->
+  <div id="input-mode" class="input-mode">
+    <div id="question-input" class="question">Wpisz odpowiedź</div>
+    <input id="input-answer" type="text" />
+    <button onclick="checkInputAnswer()">Sprawdź</button>
+    <button onclick="exitMode()">Wyjdź</button>
+  </div>
 
-    <!-- Tryb Wpisywanie -->
-    <div id="typing" class="typing hidden">
-      <div id="typingQuestion" class="question">Pytanie</div>
-      <input type="text" id="typingAnswer" placeholder="Wpisz odpowiedź">
-      <button onclick="checkTyping()">Sprawdź</button>
-      <button onclick="exitMode()">Wyjdź</button>
+  <!-- Tryb Sprawdzian -->
+  <div id="test-mode" class="test-mode">
+    <div id="test-question" class="question">Test: Pytanie 1</div>
+    <div class="buttons">
+      <button onclick="nextTestQuestion()">Następne pytanie</button>
+      <button onclick="prevTestQuestion()">Poprzednie pytanie</button>
+      <button onclick="exitMode()">Zakończ test</button>
     </div>
+  </div>
 
-    <!-- Tryb Testowy -->
-    <div id="testMode" class="test-mode hidden">
-      <h2>Ustawienia Testu</h2>
-      <label for="questionCount">Liczba pytań (1-100):</label>
-      <input type="number" id="questionCount" value="30" min="1" max="100"><br><br>
-      <input type="checkbox" id="modeMultipleChoice"> Wielokrotny wybór<br>
-      <input type="checkbox" id="modeTrueFalse"> Prawda/Fałsz<br>
-      <input type="checkbox" id="modeTyping"> Wpisywanie<br><br>
-      <button onclick="initializeTest()">Rozpocznij Test</button>
-    </div>
-
-    <div id="testQuestions" class="hidden">
-      <div id="testQuestion" class="question">Pytanie testowe</div>
-      <div id="testChoices"></div>
-      <input type="text" id="testAnswerInput" placeholder="Wpisz odpowiedź">
-      <button onclick="checkTestAnswer()">Następne pytanie</button>
-      <button onclick="exitTest()">Zakończ test</button>
-    </div>
+  <!-- Podsumowanie -->
+  <div id="summary" class="summary">
+    <h2>Wyniki</h2>
+    <p id="summary-results"></p>
+    <button onclick="goToMainMenu()">Wróć do menu głównego</button>
   </div>
 
   <script>
     let flashcards = [];
     let currentIndex = 0;
-    let isFront = true;
-    let score = 0;
+    let correctAnswers = 0;
     let totalQuestions = 0;
     let testQuestions = [];
-    let testAnswers = [];
+    let testResults = [];
 
     async function loadFlashcards() {
       const response = await fetch('fiszki.txt');
@@ -167,88 +99,161 @@
         const [english, polish] = line.split(';').map(word => word.trim());
         return { english, polish };
       });
+      document.getElementById("menu").style.display = "block";
     }
 
     function startMode(mode) {
-      document.getElementById("menu").classList.add("hidden");
-      document.getElementById(mode).classList.remove("hidden");
+      document.getElementById("menu").style.display = "none";
+      document.getElementById(`${mode}-mode`).style.display = "block";
+      correctAnswers = 0;
       totalQuestions = 0;
-      score = 0;
-      switch (mode) {
-        case 'flashcard': showFlashcard(); break;
-        case 'multipleChoice': showMultipleChoice(); break;
-        case 'trueFalse': showTrueFalse(); break;
-        case 'typing': showTyping(); break;
-      }
+      currentIndex = 0;
+      if (mode === 'flashcard') showFlashcard();
+      else if (mode === 'choice') startChoiceMode();
+      else if (mode === 'truefalse') startTrueFalseMode();
+      else if (mode === 'input') startInputMode();
+      else if (mode === 'test') startTestMode();
     }
 
+    function exitMode() {
+      document.querySelectorAll('.flashcard, .choice-mode, .true-false-mode, .input-mode, .test-mode')
+              .forEach(el => el.style.display = 'none');
+      showSummary();
+    }
+
+    function goToMainMenu() {
+      document.getElementById("summary").style.display = "none";
+      document.getElementById("menu").style.display = "block";
+    }
+
+    function showSummary() {
+      const summaryText = `Poprawne odpowiedzi: ${correctAnswers} z ${totalQuestions} (${((correctAnswers / totalQuestions) * 100).toFixed(2)}%)`;
+      document.getElementById("summary-results").innerText = summaryText;
+      document.getElementById("summary").style.display = "block";
+    }
+
+    // ============== TRYB FISZKI ==============
     function showFlashcard() {
       const card = flashcards[currentIndex];
-      document.getElementById("flashcardFront").textContent = card.english;
-      document.getElementById("flashcardBack").textContent = card.polish;
-    }
-
-    function flipFlashcard() {
-      document.getElementById("flashcardBox").classList.toggle("flip");
-    }
-
-    function speakWord() {
-      const text = flashcards[currentIndex].english;
-      const utterance = new SpeechSynthesisUtterance(text);
-      speechSynthesis.speak(utterance);
+      const flashcardDiv = document.getElementById('flashcard');
+      flashcardDiv.textContent = card.english;
+      flashcardDiv.onclick = () => {
+        flashcardDiv.textContent = flashcardDiv.textContent === card.english ? card.polish : card.english;
+      };
     }
 
     function nextFlashcard() {
       currentIndex = (currentIndex + 1) % flashcards.length;
       showFlashcard();
-      document.getElementById("flashcardBox").classList.remove("flip");
     }
 
     function prevFlashcard() {
       currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
       showFlashcard();
-      document.getElementById("flashcardBox").classList.remove("flip");
     }
 
-    function exitMode() {
-      const modeDivs = document.querySelectorAll(".flashcard, .multiple-choice, .true-false, .typing");
-      modeDivs.forEach(div => div.classList.add("hidden"));
-      document.getElementById("menu").classList.remove("hidden");
-      const percent = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
-      alert(`Wynik: ${score}/${totalQuestions} (${percent.toFixed(2)}%)`);
+    // ============== TRYB WIELOKROTNY WYBÓR ==============
+    function startChoiceMode() {
+      nextChoiceQuestion();
     }
 
-    function initializeTest() {
-      const questionCount = parseInt(document.getElementById("questionCount").value);
-      const modes = [];
-      if (document.getElementById("modeMultipleChoice").checked) modes.push("multipleChoice");
-      if (document.getElementById("modeTrueFalse").checked) modes.push("trueFalse");
-      if (document.getElementById("modeTyping").checked) modes.push("typing");
-      
-      testQuestions = generateTestQuestions(questionCount, modes);
-      startTest();
+    function nextChoiceQuestion() {
+      const card = flashcards[Math.floor(Math.random() * flashcards.length)];
+      const correctAnswer = card.polish;
+      const options = [correctAnswer];
+
+      while (options.length < 4) {
+        const randomCard = flashcards[Math.floor(Math.random() * flashcards.length)].polish;
+        if (!options.includes(randomCard)) options.push(randomCard);
+      }
+
+      options.sort(() => Math.random() - 0.5);
+
+      document.getElementById("question-choice").innerText = `Co znaczy: "${card.english}"?`;
+      const answersDiv = document.getElementById("answers-choice");
+      answersDiv.innerHTML = '';
+      options.forEach(option => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.onclick = () => checkChoiceAnswer(option, correctAnswer);
+        answersDiv.appendChild(button);
+      });
     }
 
-    function startTest() {
-      document.getElementById("testMode").classList.add("hidden");
-      document.getElementById("testQuestions").classList.remove("hidden");
-      showTestQuestion();
+    function checkChoiceAnswer(selected, correct) {
+      totalQuestions++;
+      if (selected === correct) {
+        correctAnswers++;
+        alert("Dobrze!");
+      } else {
+        alert(`Źle! Poprawna odpowiedź: ${correct}`);
+      }
+      nextChoiceQuestion();
     }
 
-    function showTestQuestion() {
-      // Implementacja wyświetlania pytania testowego
+    // ============== TRYB PRAWDA/FAŁSZ ==============
+    function startTrueFalseMode() {
+      nextTrueFalseQuestion();
     }
 
-    function checkTestAnswer() {
-      // Implementacja sprawdzania odpowiedzi testowej
+    function nextTrueFalseQuestion() {
+      const card = flashcards[Math.floor(Math.random() * flashcards.length)];
+      const correct = Math.random() > 0.5;
+      const polishWord = correct ? card.polish : flashcards[Math.floor(Math.random() * flashcards.length)].polish;
+
+      document.getElementById("question-true-false").innerText = `"${card.english}" to po polsku "${polishWord}"`;
+      currentIndex = correct ? 1 : 0; 
     }
 
-    function exitTest() {
-      document.getElementById("testQuestions").classList.add("hidden");
-      document.getElementById("menu").classList.remove("hidden");
-      const percent = testAnswers.filter(ans => ans.correct).length / testAnswers.length * 100;
-      alert(`Test zakończony. Wynik: ${percent.toFixed(2)}%`);
+    function answerTrueFalse(answer) {
+      totalQuestions++;
+      const isCorrect = (currentIndex === 1 && answer) || (currentIndex === 0 && !answer);
+      if (isCorrect) {
+        correctAnswers++;
+        alert("Dobrze!");
+      } else {
+        alert("Źle!");
+      }
+      nextTrueFalseQuestion();
     }
+
+    // ============== TRYB WPISYWANIA ==============
+    function startInputMode() {
+      nextInputQuestion();
+    }
+
+    function nextInputQuestion() {
+      const card = flashcards[Math.floor(Math.random() * flashcards.length)];
+      document.getElementById("question-input").innerText = `Jak po angielsku jest "${card.polish}"?`;
+      document.getElementById("input-answer").value = '';
+      document.getElementById("input-answer").dataset.correctAnswer = card.english;
+    }
+
+    function checkInputAnswer() {
+      totalQuestions++;
+      const answer = document.getElementById("input-answer").value.trim();
+      const correctAnswer = document.getElementById("input-answer").dataset.correctAnswer;
+      if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
+        correctAnswers++;
+        alert("Dobrze!");
+      } else {
+        alert(`Źle! Poprawna odpowiedź: ${correctAnswer}`);
+      }
+      nextInputQuestion();
+    }
+
+    // ============== TRYB SPRAWDZIAN ==============
+    function startTestMode() {
+      testQuestions = flashcards.slice(0, 30);
+      testResults = [];
+      nextTestQuestion();
+    }
+
+    function nextTestQuestion() {
+      // Implementacja kolejnych pytań testowych
+    }
+
+    loadFlashcards();
   </script>
 </body>
 </html>
