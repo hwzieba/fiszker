@@ -1,1 +1,105 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikacja Fiszki</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    .flashcard {
+      width: 300px;
+      height: 150px;
+      border: 1px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 24px;
+      cursor: pointer;
+      margin: 20px 0;
+      background-color: #f9f9f9;
+    }
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aplikacja Fiszki</h1>
+  <div id="flashcard" class="flashcard">Kliknij, aby zobaczyć tłumaczenie</div>
+  <div class="buttons">
+    <button onclick="prevFlashcard()">Poprzednia fiszka</button>
+    <button onclick="nextFlashcard()">Następna fiszka</button>
+  </div>
+
+  <script>
+    let flashcards = [];
+    let currentIndex = 0;
+    let isFront = true;
+
+    // Funkcja do załadowania fiszek z pliku fiszki.txt
+    async function loadFlashcards() {
+      const response = await fetch('fiszki.txt');
+      const text = await response.text();
+      flashcards = text.trim().split('\n').map(line => {
+        const [english, polish] = line.split(';').map(word => word.trim());
+        return { english, polish };
+      });
+      showFlashcard();
+    }
+
+    // Funkcja wyświetlająca aktualną fiszkę
+    function showFlashcard() {
+      const card = flashcards[currentIndex];
+      const flashcardDiv = document.getElementById('flashcard');
+      if (isFront) {
+        flashcardDiv.textContent = card.english;
+        flashcardDiv.onclick = () => {
+          isFront = false;
+          showFlashcard();
+          speak(card.english);
+        };
+      } else {
+        flashcardDiv.textContent = card.polish;
+        flashcardDiv.onclick = () => {
+          isFront = true;
+          showFlashcard();
+        };
+      }
+    }
+
+    // Funkcja syntezatora mowy (dla terminu angielskiego)
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+
+    // Funkcje nawigacyjne
+    function nextFlashcard() {
+      currentIndex = (currentIndex + 1) % flashcards.length;
+      isFront = true;
+      showFlashcard();
+    }
+
+    function prevFlashcard() {
+      currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
+      isFront = true;
+      showFlashcard();
+    }
+
+    // Załaduj fiszki przy starcie aplikacji
+    loadFlashcards();
+  </script>
+</body>
+</html>
