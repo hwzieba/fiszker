@@ -16,40 +16,12 @@
       text-align: center;
     }
     .flashcard {
-    width: 300px; /* Szerokość fiszki */
-    height: 200px; /* Wysokość fiszki */
-    perspective: 1000px; /* Umożliwia widok 3D */
-    margin: 20px auto; /* Centrowanie fiszki */
-    cursor: pointer; /* Zmiana kursora na wskaźnik */
+      text-align: center;
+      width: 300px; /* Szerokość fiszki */
+      height: 300px; /* Wysokość fiszki */
+      border: 1px;
     }
 
-    .flashcard-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s; /* Czas animacji */
-        transform-style: preserve-3d; /* Umożliwia efekty 3D */
-    }
-
-    .flashcard-front, .flashcard-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden; /* Ukrywa tył, gdy jest odwrócony */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid #007bff; /* Ramka wokół fiszki */
-        border-radius: 10px; /* Zaokrąglenie rogów */
-        background-color: #f8f9fa; /* Tło fiszki */
-    }
-
-    .flashcard-back {
-        transform: rotateY(180deg); /* Obrót o 180 stopni dla tyłu */
-    }
-
-    .flashcard.flipped .flashcard-inner {
-        transform: rotateY(180deg); /* Obrót fiszki przy odwracaniu */
     }
     .hidden {
       display: none;
