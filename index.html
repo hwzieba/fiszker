@@ -50,7 +50,8 @@
     <div id="flashcardText">Kliknij, aby zobaczyć tłumaczenie</div>
     <div class="buttons">
       <button onclick="prevFlashcard()">Poprzednia fiszka</button>
-      <button onclick="nextFlashcard()">Następna fiszka</button>
+      <button onclick="nextFlashcard()">Następna fiszka</button><br>
+      <button onclick="returnToMenu()">Powrót do menu</button>
     </div>
   </div>
 
@@ -101,6 +102,14 @@
     let testQuestions = [];
     let testAnswers = [];
 
+
+    //Powrót do menu
+    function returnToMenu() {
+      document.getElementById("flashcardMode").classList.add("hidden");
+      document.getElementById("menu").classList.remove("hidden");
+    }
+
+    
     // Funkcja do załadowania fiszek z pliku fiszki.txt
     async function loadFlashcards() {
       const response = await fetch('fiszki.txt');
