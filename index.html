@@ -85,6 +85,12 @@
     <input type="checkbox" id="modeTrueFalse"> Prawda/Fałsz<br>
     <input type="checkbox" id="modeTyping"> Wpisywanie<br><br>
     <button onclick="startTest()">Rozpocznij Test</button>
+    <div class="buttons">
+    <button onclick="prevTestQuestion()">Poprzednie pytanie</button>
+    <button onclick="nextTestQuestion()">Następne pytanie</button>
+    <button onclick="endTest()">Zakończ test</button>
+  </div>
+
   </div>
 
   <script>
@@ -185,9 +191,109 @@
 
     // Tryb Testowy - do zaimplementowania
     function startTest() {
-      // Wczytanie pytań testowych i odpowiedzi do dalszej implementacji...
+      const questionCount = parseInt(document.getElementById("questionCount").value);
+      const selectedModes = [];
+      if (document.getElementById("modeMultipleChoice").checked) selectedModes.push("multipleChoice");
+      if (document.getElementById("modeTrueFalse").checked) selectedModes.push("trueFalse");
+      if (document.getElementById("modeTyping").checked) selectedModes.push("typing");
+    
+      testQuestions = [];
+      score = 0;
+      testAnswers = [];
+    
+      // Generowanie pytań
+      for (let i = 0; i < questionCount; i++) {
+        const mode = selectedModes[i % selectedModes.length];
+        testQuestions.push({ mode, card: flashcards[Math.floor(Math.random() * flashcards.length)] });
+      }
+    
+      currentIndex = 0;
+      showTestQuestion();
     }
 
+    // Wielokrotny wybór w trybie testowym
+    function checkMultipleChoiceForTest(choice, answer) {
+      const correct = choice === answer;
+      score += correct ? 1 : 0;
+      testAnswers.push({ correct, userAnswer: choice, correctAnswer: answer });
+      nextTestQuestion(); // Przechodzi do następnego pytania testowego
+    }
+    
+    // Prawda/Fałsz w trybie testowym
+    function checkTrueFalseForTest(isTrue) {
+      const correct = isTrue === (document.getElementById("tfQuestion").dataset.answer === "true");
+      score += correct ? 1 : 0;
+      testAnswers.push({ correct, userAnswer: isTrue ? "Prawda" : "Fałsz", correctAnswer: correct ? "Prawda" : "Fałsz" });
+      nextTestQuestion();
+    }
+    
+    // Wpisywanie w trybie testowym
+    function checkTypingForTest() {
+      const answer = document.getElementById("typingAnswer").value.trim().toLowerCase();
+      const correct = document.getElementById("typingQuestion").dataset.answer.toLowerCase();
+      const isCorrect = answer === correct;
+      score += isCorrect ? 1 : 0;
+      testAnswers.push({ correct: isCorrect, userAnswer: answer, correctAnswer: correct });
+      nextTestQuestion();
+    }
+
+    
+    function showTestQuestion() {
+      document.getElementById("multipleChoice").classList.add("hidden");
+      document.getElementById("trueFalse").classList.add("hidden");
+      document.getElementById("typing").classList.add("hidden");
+    
+      const question = testQuestions[currentIndex];
+    
+      if (question.mode === "multipleChoice") {
+        showMultipleChoice();
+        // Aktualizacja przycisków odpowiedzi do funkcji testowej
+        document.querySelectorAll("#mcChoices button").forEach(button => {
+          button.onclick = () => checkMultipleChoiceForTest(button.textContent, question.card.polish);
+        });
+      } else if (question.mode === "trueFalse") {
+        showTrueFalse();
+        document.querySelector("button[onclick='checkTrueFalse(true)']").onclick = () => checkTrueFalseForTest(true);
+        document.querySelector("button[onclick='checkTrueFalse(false)']").onclick = () => checkTrueFalseForTest(false);
+      } else if (question.mode === "typing") {
+        showTyping();
+        document.querySelector("button[onclick='checkTyping()']").onclick = checkTypingForTest;
+      }
+    }
+
+    function nextTestQuestion() {
+      if (currentIndex < testQuestions.length - 1) {
+        currentIndex++;
+        showTestQuestion();
+      }
+    }
+    
+    function prevTestQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showTestQuestion();
+      }
+    }
+    
+    function endTest() {
+      const totalQuestions = testQuestions.length;
+      const result = `Wynik: ${score}/${totalQuestions} (${Math.round((score / totalQuestions) * 100)}%)`;
+      let incorrectAnswers = '';
+    
+      testAnswers.forEach((answer, index) => {
+        if (!answer.correct) {
+          incorrectAnswers += `Pytanie ${index + 1}: Odpowiedź: ${answer.userAnswer}, Poprawna odpowiedź: ${answer.correctAnswer}\n`;
+        }
+      });
+    
+      alert(`${result}\n\nNiepoprawne odpowiedzi:\n${incorrectAnswers}`);
+      location.reload();  // Powrót do menu po zakończeniu testu
+    }
+
+    
+    
+    
+    
     function getRandomPolish(count) {
       const polishWords = flashcards.map(card => card.polish);
       const randomWords = [];
