@@ -16,14 +16,6 @@
       margin-bottom:50px;
       text-align: center;
     }
-    .flashcard {
-      height:100px;
-      width:90%;
-      border-style: solid;
-      border: 1px;
-      border-radius: 5px;
-      border-color: black;
-    }
     
     .hidden {
       display: none;
@@ -70,6 +62,7 @@
   <div id="multipleChoice" class="multiple-choice hidden">
     <div id="mcQuestion" class="question">Pytanie</div>
     <div class="choices" id="mcChoices"></div>
+    <button onclick="returnToMenu()">Powrót do menu</button>
   </div>
 
   <!-- Tryb Prawda/Fałsz -->
@@ -78,6 +71,7 @@
     <div class="buttons">
       <button onclick="checkTrueFalse(true)">Prawda</button>
       <button onclick="checkTrueFalse(false)">Fałsz</button>
+      <button onclick="returnToMenu()">Powrót do menu</button>
     </div>
   </div>
 
@@ -86,6 +80,7 @@
     <div id="typingQuestion" class="question">Pytanie</div>
     <input type="text" id="typingAnswer" placeholder="Wpisz odpowiedź">
     <button onclick="checkTyping()">Sprawdź</button>
+    <button onclick="returnToMenu()">Powrót do menu</button>
   </div>
 
   <!-- Tryb Testowy -->
