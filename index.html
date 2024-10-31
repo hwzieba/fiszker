@@ -52,8 +52,9 @@
   <div id="flashcard" class="flashcard hidden">
     <div id="flashcardText">Kliknij, aby zobaczyć tłumaczenie</div>
     <div class="buttons">
-      <button onclick="prevFlashcard()">Poprzednia fiszka</button>
-      <button onclick="nextFlashcard()">Następna fiszka</button>
+      <button onclick="prevFlashcard()">Poprzednia</button>
+      <button onclick="nextFlashcard()">Następna</button>
+      <button onclick="randomFlashcard()">Losowa</button>
       <button onclick="returnToMenu()">Powrót do menu</button>
     </div>
   </div>
@@ -151,7 +152,8 @@
     }
     function nextFlashcard() { currentIndex = (currentIndex + 1) % flashcards.length; isFront = true; showFlashcard(); }
     function prevFlashcard() { currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length; isFront = true; showFlashcard(); }
-
+    function randomFlashcard() { currentIndex = Math.floor(Math.random() * flashcards.length); isFront = true; showFlashcard(); }
+    
     // Syntezator mowy
     function speak(text) { const utterance = new SpeechSynthesisUtterance(text); utterance.lang = 'en-US'; speechSynthesis.speak(utterance); }
 
