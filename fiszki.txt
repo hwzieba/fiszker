@@ -1,4 +1,4 @@
-accelerator <img src="https://www.statefarm.com/content/dam/sf-library/en-us/secure/legacy/simple-insights/quick-steps-to-take-if-your-gas-pedal-sticks.jpg">; pedał przyspieszenia
+accelerator; pedał przyspieszenia
 admission stroke; suw ssący
 aftermarket; rynek wtórny
 air brake; hamulec pneumatyczny
