@@ -177,7 +177,7 @@
     function showTrueFalse() {
       const card = flashcards[Math.floor(Math.random() * flashcards.length)];
       const polish = Math.random() < 0.5 ? card.polish : getRandomPolish(1)[0];
-      document.getElementById("tfQuestion").textContent = `"${card.english}" to po polsku "${polish}".`;
+      document.getElementById("tfQuestion").textContent = `"${card.english}" to "${polish}".`;
       document.getElementById("tfQuestion").dataset.answer = polish === card.polish;
     }
     function checkTrueFalse(isTrue) {
