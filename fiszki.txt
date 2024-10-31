@@ -1,100 +1,278 @@
-Engine; Silnik
-Transmission; Skrzynia biegów
-Clutch; Sprzęgło
-Brakes; Hamulce
-Suspension; Zawieszenie
-Steering wheel; Kierownica
-Battery; Akumulator
-Alternator; Alternator
-Radiator; Chłodnica
-Exhaust system; Układ wydechowy
-Air filter; Filtr powietrza
-Oil filter; Filtr oleju
-Spark plug; Świeca zapłonowa
-Headlights; Reflektory
-Brake pads; Klocki hamulcowe
-Disc brakes; Hamulce tarczowe
-Timing belt; Pasek rozrządu
-Fuel pump; Pompa paliwowa
-Fuel filter; Filtr paliwa
-Oil change; Wymiana oleju
-Coolant refill; Uzupełnienie płynu chłodniczego
-Diagnostic check; Test diagnostyczny
-Wheel alignment; Wyrównanie kół
-Tyre pressure; Ciśnienie w oponach
-Inspect the suspension; Sprawdź zawieszenie
-Test the brakes; Sprawdź hamulce
-Battery charge; Naładowanie akumulatora
-Inspect the wiring; Skontroluj okablowanie
-Replace the air filter; Wymień filtr powietrza
-Check the oil level; Sprawdź poziom oleju
-Tighten the bolts; Dokręć śruby
-Replace brake fluid; Wymień płyn hamulcowy
-Test drive; Jazda próbna
-Examine for leaks; Sprawdź wycieki
-Service interval; Interwał serwisowy
-Replace spark plugs; Wymień świece zapłonowe
-Engine diagnostic; Diagnostyka silnika
-Check engine light; Kontrolka silnika
-Oil filter replacement; Wymiana filtra oleju
-Transmission fluid check; Sprawdzenie płynu w skrzyni biegów
-Engine overheating; Przegrzanie silnika
-Steering alignment; Wyrównanie kierownicy
-Tyre rotation; Rotacja opon
-Inspect tyre tread; Skontroluj bieżnik opon
-Air conditioning check; Sprawdzenie klimatyzacji
-Inspect fuel lines; Skontroluj przewody paliwowe
-Replace timing belt; Wymień pasek rozrządu
-Clean fuel injectors; Wyczyść wtryskiwacze paliwa
-Brake adjustment; Regulacja hamulców
-Check coolant level; Sprawdź poziom płynu chłodniczego
-Fuel economy; Ekonomia paliwa
-Exhaust leak; Wyciek w układzie wydechowym
-Replace worn-out parts; Wymień zużyte części
-Inspect fan belt; Skontroluj pasek wentylatora
-Check tyre wear; Sprawdź zużycie opon
-Inspect hoses; Skontroluj węże
-Change cabin filter; Wymień filtr kabinowy
-Replace wipers; Wymień wycieraczki
-Battery replacement; Wymiana akumulatora
-Coolant flush; Wymiana płynu chłodniczego
-Inspect exhaust system; Skontroluj układ wydechowy
-Rotate the tyres; Obróć opony
-Inspect wheel bearings; Skontroluj łożyska kół
-Replace drive belt; Wymień pasek napędowy
-Check brake lines; Sprawdź przewody hamulcowe
-Replace serpentine belt; Wymień pasek klinowy
-Inspect spark plug wires; Skontroluj przewody świec zapłonowych
-Adjust tyre pressure; Wyreguluj ciśnienie w oponach
-Change transmission fluid; Wymień płyn w skrzyni biegów
-Recharge air conditioning; Napełnij klimatyzację
-Fix engine misfire; Napraw nieprawidłowe działanie silnika
-Inspect timing chain; Skontroluj łańcuch rozrządu
-Bleed the brakes; Odpowietrz hamulce
-Lubricate hinges; Nasmaruj zawiasy
-Check headlight alignment; Skontroluj ustawienie reflektorów
-Inspect shock absorbers; Skontroluj amortyzatory
-Replace wheel bearings; Wymień łożyska kół
-Check alternator output; Sprawdź wydajność alternatora
-Measure engine compression; Zmierz kompresję silnika
-Engine tuning; Strojenie silnika
-Inspect air intake; Skontroluj układ dolotowy
-Replace brake rotors; Wymień tarcze hamulcowe
-Torque the bolts; Dokręć śruby momentem
-Check idle speed; Skontroluj prędkość biegu jałowego
-Inspect catalytic converter; Skontroluj katalizator
-Replace power steering fluid; Wymień płyn wspomagania kierownicy
-Adjust headlights; Wyreguluj reflektory
-Replace battery terminals; Wymień końcówki akumulatora
-Check emissions; Skontroluj emisję spalin
-Inspect brake calipers; Skontroluj zaciski hamulcowe
-Replace differential fluid; Wymień olej w mechanizmie różnicowym
-Inspect vacuum lines; Skontroluj przewody podciśnienia
-Replace valve cover gasket; Wymień uszczelkę pokrywy zaworów
-Inspect fuse box; Skontroluj skrzynkę bezpieczników
-Perform road test; Przeprowadź jazdę próbną
-Clean battery terminals; Wyczyść końcówki akumulatora
-Inspect timing gears; Skontroluj koła rozrządu
-Install new battery; Zamontuj nowy akumulator
-Check for unusual noises; Sprawdź nietypowe dźwięki
-Replace thermostat; Wymień termostat
+accelerator; pedał przyspieszenia
+admission stroke; suw ssący
+aftermarket; rynek wtórny
+air brake; hamulec pneumatyczny
+airless injection; wtrysk bezpowietrzny
+all-wheel drive (AWD); napęd na wszystkie koła
+alternative fuel vehicle; pojazd na paliwa alternatywne
+alternator; alternator
+anti-lock braking system (ABS); system zapobiegający blokowaniu kół (ABS)
+antifreeze; płyn chłodniczy
+articulated vehicle; pojazd przegubowy
+automatic transmission; automatyczna skrzynia biegów
+automotive design; projektowanie samochodowe
+automotive engineering; inżynieria samochodowa
+axle; oś
+axle ratio; przełożenie osi
+back-fire; wystrzał wsteczny
+backup camera; kamera cofania
+ball and socket; przegub kulowy
+battery; bateria
+bell housing; obudowa dzwonowa
+bench seat; siedzenie kanapowe
+body-in-blue; nadwozie
+brake; hamulec
+brake balance; balans hamulców
+brake dive; zanurzenie hamulca
+brake fade; zanik hamulców
+brake fluid; płyn hamulcowy
+brake light; światło stopu
+brake pad; klocki hamulcowe
+brake pedal; pedał hamulca
+brake puck; klocki hamulcowe (szczególnie w hamulcach tarczowych)
+brake shoe; szczęka hamulcowa
+brake swept area; powierzchnia hamowania
+brake rotor; tarcza hamulcowa
+braking distance; droga hamowania
+braking system; układ hamulcowy
+breeches pipe; rura wlotowa
+bucket seat; siedzenie kubełkowe
+bullbar; osłona przeciwwstrząsowa
+bumper; zderzak
+caliper; zacisk hamulcowy
+camber angle; kąt nachylenia koła
+carburetor; gaźnik
+carputer; komputer samochodowy
+caster angle; kąt pochylenia sworznia zwrotnicy
+catalytic converter; katalizator
+center cap; kapsel środka koła
+center console; konsola środkowa
+chassis; podwozie
+choke; ssanie
+clearance volume; objętość przestrzeni
+clocking; ustawienie wału korbowego
+clockspring; sprężyna zegarowa
+clutch; sprzęgło
+cold cranking amp; ampery rozruchowe
+cold inflation pressure; ciśnienie zimnego napompowania
+combustion chamber; komora spalania
+compression ratio; stopień sprężania
+continuously variable transmission (CVT); bezstopniowa skrzynia biegów (CVT)
+coolant; płyn chłodzący
+cornering; zakręcanie
+cowling; obudowa
+crankcase; skrzynia korbowa
+crankshaft; wał korbowy
+crankshaft journal; czop wału korbowego
+crankshaft throw; ramię wału korbowego
+crossfiring; przeskakiwanie iskry
+crossflow cylinder head; głowica cylindrów z przepływem poprzecznym
+crossmember; poprzeczka
+curb weight; masa własna
+dashboard; deska rozdzielcza
+differential; mechanizm różnicowy
+dipstick; bagnet
+disc brake; hamulec tarczowy
+dispersant; środek dyspersyjny
+displacement; pojemność skokowa
+displacement factor; współczynnik pojemności skokowej
+dive; zanurzenie
+donut; koło zapasowe
+drive axle; oś napędowa
+drive shaft; wał napędowy
+drive wheel; koło napędowe
+drivebox; skrzynka przekładniowa
+drivetrain; układ napędowy
+drop arm; ramię sterujące
+drum brake; hamulec bębnowy
+dry clutch; suche sprzęgło
+dynamometer; dynamometr
+econometer; ekonometr
+economizer; ekonomizer
+electric vehicle; pojazd elektryczny
+electronic control unit (ECU); elektroniczna jednostka sterująca (ECU)
+engine block; blok silnika
+engine configuration; konfiguracja silnika
+exhaust manifold; kolektor wydechowy
+exhaust system; układ wydechowy
+fan belt; pasek wentylatora
+fender; błotnik
+fifth-wheel coupling; sprzęg piątego koła
+firing order; kolejność zapłonu
+flat engine; silnik płaski
+flathead engine; silnik płaski z zaworami bocznymi
+footprint; ślad
+footwell; miejsce na nogi
+four-stroke engine; silnik czterosuwowy
+four-wheel drive (4WD); napęd na cztery koła (4WD)
+frame; rama
+friction clutch; sprzęgło cierne
+front-wheel drive (FWD); napęd na przednie koła (FWD)
+gas pedal; pedał gazu
+gearbox; skrzynia biegów
+gear stick; drążek zmiany biegów
+glove compartment; schowek
+glow plug; świeca żarowa
+governor; regulator
+gradeability; zdolność pokonywania wzniesień
+grille; kratka
+gross axle weight; całkowita masa osi
+gross power; moc brutto
+gross train weight; masa całkowita zespołu pojazdów
+gross vehicle weight (GVW); masa całkowita pojazdu (GVW)
+handbrake; hamulec ręczny
+handling; prowadzenie
+headlamp; reflektor
+headlight; reflektor przedni
+heat soak; przegrzanie
+hidden headlamp; ukryty reflektor
+hood; maska
+horsepower (hp); konie mechaniczne (KM)
+hub; piasta
+hubcap; kołpak
+hybrid vehicle; pojazd hybrydowy
+idle port; port biegu jałowego
+idle speed; prędkość biegu jałowego
+idler arm; ramię jałowe
+idling; praca na biegu jałowym
+ignition coil; cewka zapłonowa
+ignition switch; włącznik zapłonu
+inline engine; silnik rzędowy
+instrument panel; panel instrumentów
+intake manifold; kolektor dolotowy
+internal combustion engine; silnik spalinowy
+jacking bracket; wspornik podnośnika
+jump lead; przewód rozruchowy
+jump start; awaryjne uruchomienie
+kerb weight; masa własna
+keyless entry; bezkluczykowy dostęp
+kickdown; kickdown
+kingpin; sworzeń zwrotnicy
+knock rating; ocena odpornści na spalanie stukowe
+knocking; spalanie stukowe
+knockout axle; oś wyjmowana
+leaf spring; resor piórowy
+lifting axle; podnoszona oś
+limited-slip differential; mechanizm różnicowy o ograniczonym poślizgu
+locking differential; blokada mechanizmu różnicowego
+longitudinal engine; silnik wzdłużny
+lugnut; nakrętka koła
+main drive belt; główny pasek napędowy
+make; marka
+manual transmission; manualna skrzynia biegów
+manumatic; manumatyczna skrzynia biegów
+marque; marka
+model; model
+moonroof; szyberdach
+motor oil; olej silnikowy
+muffler; tłumik
+multivalve engine; silnik wielozaworowy
+nave; piasta
+nave cap; kapsel piasty
+neutral (N); neutral (N)
+north-south; północ-południe
+noseweight; obciążenie przodu
+octane rating; ocena oktanowa
+odometer; licznik kilometrów
+off-road vehicle; pojazd terenowy
+oil filter; filtr oleju
+oil gallery; kanał olejowy
+oil gauge; wskaźnik oleju
+oil level indicator; wskaźnik poziomu oleju
+oil pan; miska olejowa
+oil pump; pompa oleju
+on-board diagnostics (OBD); diagnostyka pokładowa (OBD)
+overdrive; nadbieg
+overhead valve engine (OHV); silnik z zaworami w głowicy (OHV)
+overspeed governor; regulator nadmiernej prędkości
+oversteer; nadsterowność
+parking brake; hamulec postojowy
+piston; tłok
+platform; platforma
+play; luz
+power locks; zamki centralne
+power steering; wspomaganie kierownicy
+power stroke; suw mocy
+power windows; elektryczne szyby
+powertrain; układ napędowy
+powertrain control module (PCM); moduł sterujący układem napędowym (PCM)
+rack and pinion; przekładnia zębata
+radiator; chłodnica
+radiator fan; wentylator chłodnicy
+rear-view mirror; lusterko wsteczne
+rear-wheel drive (RWD); napęd na tylne koła (RWD)
+redline; czerwone pole obrotomierza
+remote keyless system (RKS); system zdalnego otwierania (RKS)
+remote start; zdalne uruchamianie
+roadworthy; nadający się do jazdy
+rolling ratio; współczynnik toczenia
+scuttle; grodź
+semi-automatic transmission; półautomatyczna skrzynia biegów
+siping; nacinanie
+sludge; osad olejowy
+soak time; czas nasiąkania
+solenoid switch; przełącznik elektromagnetyczny
+solid injection; wtrysk stały
+spare tire; koło zapasowe
+spark ignition; zapłon iskrowy
+spark plug; świeca zapłonowa
+speedometer; prędkościomierz
+spoiler; spoiler
+steering column; kolumna kierownicy
+steering wheel; kierownica
+stick shift; manualna zmiana biegów
+straight engine; silnik rzędowy
+strangler; ssanie ręczne
+street-legal; dopuszczony do ruchu drogowego
+stroke; suw
+subframe; ramka pomocnicza
+sun visor; osłona przeciwsłoneczna
+supercharger; doładowarka mechaniczna
+suspension; zawieszenie
+tachometer; obrotomierz
+tailgate; tylna klapa
+tailpipe; rura wydechowa
+telematic control unit (TCU); jednostka sterująca telematyką (TCU)
+telematics; telematyka
+throttle; przepustnica
+tie rod; drążek kierowniczy
+tire; opona
+tire balance; wyważenie opony
+tire pressure; ciśnienie w oponie
+tire rotation; rotacja opon
+torque; moment obrotowy
+traction; przyczepność
+traction control system (TCS); system kontroli trakcji (TCS)
+trafficator; kierunkowskaz
+transaxle; skrzynia biegów z mechanizmem różnicowym
+transbrake; hamulec skrzyni biegów
+transfer case; skrzynia rozdzielcza
+transmission; skrzynia biegów
+transmission control unit (TCU); jednostka sterująca skrzynią biegów (TCU)
+transmission fluid; płyn do skrzyni biegów
+transmission tunnel; tunel skrzyni biegów
+transverse engine; silnik poprzeczny
+trim level; poziom wyposażenia
+trunk; bagażnik
+turbocharger; turbosprężarka
+turn signal; kierunkowskaz
+two-stroke engine; silnik dwusuwowy
+two-wheel drive (2WD); napęd na dwa koła (2WD)
+undercarriage; podwozie
+underdrive pulley; koło napędowe o mniejszym przełożeniu
+understeer; podsterowność
+unsprung mass; masa niesprężysta
+V engine; silnik w układzie V
+valvetrain; układ zaworów
+vehicle identification number (VIN); numer identyfikacyjny pojazdu (VIN)
+wheel alignment; ustawienie kół
+wheel well; nadkole
+wheelbase; rozstaw osi
+wheelfight; walka z kierownicą
+whistle tip; końcówka wydechu
+windshield; przednia szyba
+windshield wiper; wycieraczka przedniej szyby
+wing; błotnik
+wing mirror; lusterko boczne
+wiring harness; wiązka przewodów
+Y pipe; rura Y

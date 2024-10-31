@@ -1,0 +1,278 @@
+accelerator
+admission stroke
+aftermarket
+air brake
+airless injection
+all-wheel drive (AWD)
+alternative fuel vehicle
+alternator
+anti-lock braking system (ABS)
+antifreeze
+articulated vehicle
+automatic transmission
+automotive design
+automotive engineering
+axle
+axle ratio
+back-fire
+backup camera
+ball and socket
+battery
+bell housing
+bench seat
+body-in-blue
+brake
+brake balance
+brake dive
+brake fade
+brake fluid
+brake light
+brake pad
+brake pedal
+brake puck
+brake shoe
+brake swept area
+brake rotor
+braking distance
+braking system
+breeches pipe
+bucket seat
+bullbar
+bumper
+caliper
+camber angle
+carburetor
+carputer
+caster angle
+catalytic converter
+center cap
+center console
+chassis
+choke
+clearance volume
+clocking
+clockspring
+clutch
+cold cranking amp
+cold inflation pressure
+combustion chamber
+compression ratio
+continuously variable transmission (CVT)
+coolant
+cornering
+cowling
+crankcase
+crankshaft
+crankshaft journal
+crankshaft throw
+crossfiring
+crossflow cylinder head
+crossmember
+curb weight
+dashboard
+differential
+dipstick
+disc brake
+dispersant
+displacement
+displacement factor
+dive
+donut
+drive axle
+drive shaft
+drive wheel
+drivebox
+drivetrain
+drop arm
+drum brake
+dry clutch
+dynamometer
+econometer
+economizer
+electric vehicle
+electronic control unit (ECU)
+engine block
+engine configuration
+exhaust manifold
+exhaust system
+fan belt
+fender
+fifth-wheel coupling
+firing order
+flat engine
+flathead engine
+footprint
+footwell
+four-stroke engine
+four-wheel drive (4WD)
+frame
+friction clutch
+front-wheel drive (FWD)
+gas pedal
+gearbox
+gear stick
+glove compartment
+glow plug
+governor
+gradeability
+grille
+gross axle weight
+gross power
+gross train weight
+gross vehicle weight (GVW)
+handbrake
+handling
+headlamp
+headlight
+heat soak
+hidden headlamp
+hood
+horsepower (hp)
+hub
+hubcap
+hybrid vehicle
+idle port
+idle speed
+idler arm
+idling
+ignition coil
+ignition switch
+inline engine
+instrument panel
+intake manifold
+internal combustion engine
+jacking bracket
+jump lead
+jump start
+kerb weight
+keyless entry
+kickdown
+kingpin
+knock rating
+knocking
+knockout axle
+leaf spring
+lifting axle
+limited-slip differential
+locking differential
+longitudinal engine
+lugnut
+main drive belt
+make
+manual transmission
+manumatic
+marque
+model
+moonroof
+motor oil
+muffler
+multivalve engine
+nave
+nave cap
+neutral (N)
+north-south
+noseweight
+octane rating
+odometer
+off-road vehicle
+oil filter
+oil gallery
+oil gauge
+oil level indicator
+oil pan
+oil pump
+on-board diagnostics (OBD)
+overdrive
+overhead valve engine (OHV)
+overspeed governor
+oversteer
+parking brake
+piston
+platform
+play
+power locks
+power steering
+power stroke
+power windows
+powertrain
+powertrain control module (PCM)
+rack and pinion
+radiator
+radiator fan
+rear-view mirror
+rear-wheel drive (RWD)
+redline
+remote keyless system (RKS)
+remote start
+roadworthy
+rolling ratio
+scuttle
+semi-automatic transmission
+siping
+sludge
+soak time
+solenoid switch
+solid injection
+spare tire
+spark ignition
+spark plug
+speedometer
+spoiler
+steering column
+steering wheel
+stick shift
+straight engine
+strangler
+street-legal
+stroke
+subframe
+sun visor
+supercharger
+suspension
+tachometer
+tailgate
+tailpipe
+telematic control unit (TCU)
+telematics
+throttle
+tie rod
+tire
+tire balance
+tire pressure
+tire rotation
+torque
+traction
+traction control system (TCS)
+trafficator
+transaxle
+transbrake
+transfer case
+transmission
+transmission control unit (TCU)
+transmission fluid
+transmission tunnel
+transverse engine
+trim level
+trunk
+turbocharger
+turn signal
+two-stroke engine
+two-wheel drive (2WD)
+undercarriage
+underdrive pulley
+understeer
+unsprung mass
+V engine
+valvetrain
+vehicle identification number (VIN)
+wheel alignment
+wheel well
+wheelbase
+wheelfight
+whistle tip
+windshield
+windshield wiper
+wing
+wing mirror
+wiring harness
+Y pipe
